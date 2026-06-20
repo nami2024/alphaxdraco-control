@@ -1,6 +1,24 @@
 {
   "algorithm": "Ed25519",
   "key_id": "veloq-ed25519-2026-01",
-  "payload": {},
-  "signature": ""
+  "payload": {
+    "schema_version": 1,
+    "revision": 1,
+    "enabled": true,
+    "model": "openai/gpt-5.5",
+    "offline_grace_hours": 24,
+    "updated_at": "2026-06-20T10:00:00Z",
+    "licenses": [
+      {
+        "license_sha256": "7ef601c5a1e645f8ef8b76cd2aad2fbafa9c78ec5a303e8678a415578d846f72",
+        "device_sha256": "3ef667c4b3304711bb0b78a1137611a9d7d97056070b1fd5ee011bdd233a022f",
+        "status": "active",
+        "expires_at": null,
+        "label": "Owner PC",
+        "plan_name": "VeloQ Owner"
+      }
+    ]
+  },
+  "payload_sha256": "1d8289f94352df8c891dbcca6fbe0911e588b350c53cb0af0b8bfc77d318c349",
+  "signature": "TNsjr5cnT7kGk6WHypAKxkwd+zTdYndSrUg8gddgaCJeehH19H+xscI15sqTZovOEapOtkyzR25tku/BKceWDg=="
 }
