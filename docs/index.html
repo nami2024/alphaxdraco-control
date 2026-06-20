@@ -32,24 +32,34 @@
     <label>License key — give this to the customer once</label>
     <code id="license">Generate a key first</code>
 
-    <label>License SHA-256 — paste this into GitHub Actions</label>
+    <label>License SHA-256 — stored in control.json</label>
     <code id="hash">—</code>
 
     <label for="device">Optional customer device code</label>
     <input id="device" maxlength="64" placeholder="64-character device code shown by the bot">
 
+    <label for="label">Customer label</label>
+    <input id="label" maxlength="80" placeholder="Customer name">
+
+    <label for="expiry">Optional expiry</label>
+    <input id="expiry" type="date">
+
+    <label>JSON record — paste inside the licenses array</label>
+    <code id="record">—</code>
+
     <div class="row">
       <button id="copyKey">Copy License Key</button>
-      <button id="copyHash">Copy License Hash</button>
+      <button id="copyRecord">Copy JSON Record</button>
     </div>
 
-    <p class="small">In GitHub, open Actions → Manage license and model → Run workflow. Choose <b>add</b>, then paste the hash and optional device code.</p>
+    <p class="small"><a href="https://github.com/nami2024/alphaxdraco-control/edit/main/control.json">Edit control.json on GitHub</a>, paste the record inside the <b>licenses</b> array, and commit.</p>
   </section>
 </main>
 <script>
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
   let currentKey = "";
   let currentHash = "";
+  let currentRecord = "";
 
   function base32(bytes) {
     let bits = 0, value = 0, output = "";
@@ -78,10 +88,29 @@
     currentHash = await sha256("AlphaXDraco-License-v1:" + currentKey.toUpperCase());
     document.querySelector("#license").textContent = currentKey;
     document.querySelector("#hash").textContent = currentHash;
+    updateRecord();
   };
 
+  function updateRecord() {
+    if (!currentHash) return;
+    const device = document.querySelector("#device").value.trim().toLowerCase();
+    const label = document.querySelector("#label").value.trim() || "Customer";
+    const date = document.querySelector("#expiry").value;
+    currentRecord = JSON.stringify({
+      license_sha256: currentHash,
+      device_sha256: device || null,
+      status: "active",
+      expires_at: date ? date + "T23:59:59Z" : null,
+      label
+    }, null, 2);
+    document.querySelector("#record").textContent = currentRecord;
+  }
+
+  document.querySelector("#device").oninput = updateRecord;
+  document.querySelector("#label").oninput = updateRecord;
+  document.querySelector("#expiry").oninput = updateRecord;
   document.querySelector("#copyKey").onclick = () => currentKey && navigator.clipboard.writeText(currentKey);
-  document.querySelector("#copyHash").onclick = () => currentHash && navigator.clipboard.writeText(currentHash);
+  document.querySelector("#copyRecord").onclick = () => currentRecord && navigator.clipboard.writeText(currentRecord);
 </script>
 </body>
 </html>
