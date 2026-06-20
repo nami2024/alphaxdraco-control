@@ -3,11 +3,11 @@
   "key_id": "veloq-ed25519-2026-02",
   "payload": {
     "schema_version": 2,
-    "revision": 6,
+    "revision": 7,
     "enabled": true,
     "model": "openai/gpt-5.5",
     "offline_grace_hours": 24,
-    "updated_at": "2026-06-20T10:36:55Z",
+    "updated_at": "2026-06-20T10:52:33Z",
     "users": [
       {
         "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -73,6 +73,19 @@
         "plan_name": "Pulse",
         "is_unlimited": false,
         "request_count": 20
+      },
+      {
+        "email_sha256": "1fe98e7ae37cca50bd7b59e193eaf1e1055194ee6c6a3f6281dc89e7f2c79c0f",
+        "password_salt": "6o8bOY2ShUSnARuXY+lJFg==",
+        "password_hash": "+dgx/J4UW6Q1fW+F4WPTPYdzHJvmHKGaupP8HXuNJvI=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": "2026-07-20T23:59:59Z",
+        "label": "Pakistani Guy",
+        "plan": "license",
+        "plan_name": "Accuracy",
+        "is_unlimited": false,
+        "request_count": 10
       },
       {
         "email_sha256": "14e02f35a2a49b4776628f51cfe7ca2f6eeb96a0657a1c09729408eb9f3d64dd",
@@ -219,6 +232,6 @@
       }
     ]
   },
-  "payload_sha256": "fa1fa9ed1260ecfd9fe7bd3eb55b21603720ea3d6717ffa16c5242809f89efde",
-  "signature": "COscnT1krdB6bqUSxyw67jFWHXO9GIRAsD0DeliR3fwJkqG7HtTALC8p0LLmhdDvTVpOlGmTddkoJ8wJn2X3DQ=="
+  "payload_sha256": "e18e82b91974c73bb2acd6f56c5978ba1c00bf250206432ba2773bbaebdf1a85",
+  "signature": "l2T9n3CEAOvoV1cNdprewP2qaEdqyUgKh/MkKrQSeyD8freqJTti/rg3zer7JRved/VG1OFmon6OJz3sjzprAA=="
 }

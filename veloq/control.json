@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 6,
+  "revision": 7,
   "enabled": true,
   "model": "openai/gpt-5.5",
   "offline_grace_hours": 24,
-  "updated_at": "2026-06-20T10:36:55Z",
+  "updated_at": "2026-06-20T10:52:33Z",
   "users": [
     {
       "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -70,6 +70,19 @@
       "plan_name": "Pulse",
       "is_unlimited": false,
       "request_count": 20
+    },
+    {
+      "email_sha256": "1fe98e7ae37cca50bd7b59e193eaf1e1055194ee6c6a3f6281dc89e7f2c79c0f",
+      "password_salt": "6o8bOY2ShUSnARuXY+lJFg==",
+      "password_hash": "+dgx/J4UW6Q1fW+F4WPTPYdzHJvmHKGaupP8HXuNJvI=",
+      "password_iterations": 350000,
+      "status": "active",
+      "expires_at": "2026-07-20T23:59:59Z",
+      "label": "Pakistani Guy",
+      "plan": "license",
+      "plan_name": "Accuracy",
+      "is_unlimited": false,
+      "request_count": 10
     },
     {
       "email_sha256": "14e02f35a2a49b4776628f51cfe7ca2f6eeb96a0657a1c09729408eb9f3d64dd",
