@@ -19,13 +19,18 @@ The panel can generate/add, activate, revoke, and delete licenses. It does not e
 
 The bot checks this fixed GitHub control URL before login and refreshes it between signal scans. If GitHub is temporarily unreachable, the last valid cached control file is accepted for the configured offline grace period.
 
-## VeloQ signed control
+## VeloQ signed Gmail/password control
 
-VeloQ uses an independent Ed25519-signed control under `veloq/`.
+VeloQ uses an independent Ed25519-signed control under `veloq/`. User emails
+are domain-separated SHA-256 hashes and passwords are salted PBKDF2-SHA256
+hashes; plaintext credentials are not committed.
 
 - Owner panel: https://nami2024.github.io/alphaxdraco-control/veloq.html
 - Editable source: `veloq/control.json`
 - Client-consumed signed file: `veloq/manifest.json`
 - Signer: `.github/workflows/sign-veloq-control.yml`
 
-The browser panel can add, revoke, activate, or delete VeloQ licenses and change the OpenRouter model. It only commits the unsigned control source. GitHub Actions signs each revision using the repository secret `VELOQ_SIGNING_KEY_PEM`; the private signing key is never exposed to the panel or desktop app.
+On the owner PC, run `VELOQ_GITHUB_ADMIN.cmd` from the VeloQ project. It can
+add/update Gmail and password accounts, revoke/reactivate users, and change the
+OpenRouter model. It signs both `control.json` and `manifest.json`, then pushes
+the update through the already authenticated GitHub CLI.

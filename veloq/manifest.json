@@ -1,14 +1,198 @@
 {
   "algorithm": "Ed25519",
-  "key_id": "veloq-ed25519-2026-01",
+  "key_id": "veloq-ed25519-2026-02",
   "payload": {
-    "schema_version": 1,
-    "revision": 1,
+    "schema_version": 2,
+    "revision": 4,
     "enabled": true,
     "model": "openai/gpt-5.5",
     "offline_grace_hours": 24,
-    "updated_at": "2026-06-20T10:00:00Z",
-    "licenses": [
+    "updated_at": "2026-06-20T10:14:58Z",
+    "users": [
+      {
+        "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
+        "password_salt": "eku1zv1dRtogJWGbB7HwcQ==",
+        "password_hash": "4h23uxCExQ1LrRj0zqXKo5bpKvIr1eWXIGXjeZ3gKFs=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "alvi",
+        "plan": "pulse",
+        "plan_name": "pulse",
+        "is_unlimited": false,
+        "request_count": 12
+      },
+      {
+        "email_sha256": "e23b69235ce9eec692be858284b0e7beaaa323547fa20d74df6a361c0b9fe286",
+        "password_salt": "exhJDWNpKdvkDAASvTKPzg==",
+        "password_hash": "37A8zeS/4uz9fyRs/MhgNACNNWN5gEKigIedbDMYYzQ=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "CEO",
+        "plan": "nexar",
+        "plan_name": "nexar",
+        "is_unlimited": false,
+        "request_count": 35
+      },
+      {
+        "email_sha256": "1bf4ec946bbdb26a4df927fd4f461c932e1b47eddeaf464a519021eae7e7a028",
+        "password_salt": "kOjXvgwiqnXWm3YQaOpkdA==",
+        "password_hash": "4gQaIvC3rSGLa7xARnEx8zm9AHZNGhQ8fwAVJkIcZIs=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "Fz",
+        "plan": "pulse",
+        "plan_name": "pulse",
+        "is_unlimited": false,
+        "request_count": 12
+      },
+      {
+        "email_sha256": "56c41806a60f324954351f2982e5127a4be65e46cca369141fecfc0881cdbbbb",
+        "password_salt": "8qxgIo8IHZX9F4mVXQFykg==",
+        "password_hash": "AcpQTzMVOZ89fIGk0Tm60LAmHE0Vz5RNI9NF3cTiS+U=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "GammaX Admin",
+        "plan": "nexar",
+        "plan_name": "nexar",
+        "is_unlimited": false,
+        "request_count": 10
+      },
+      {
+        "email_sha256": "94f106ce4d34c2817de565236b5f8afd897310a98059b6e37d109fe742a213ec",
+        "password_salt": "3wasuNMt98Wxa+OxhM93Ng==",
+        "password_hash": "2LY4npBpUWg6qozcK3HchGjLQej/oaph0wSpemqmXt4=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "irfan Raz",
+        "plan": "pulse",
+        "plan_name": "pulse",
+        "is_unlimited": false,
+        "request_count": 12
+      },
+      {
+        "email_sha256": "14e02f35a2a49b4776628f51cfe7ca2f6eeb96a0657a1c09729408eb9f3d64dd",
+        "password_salt": "cBsmNFhzDiSiVHOAWca9ww==",
+        "password_hash": "XNZaL/DTTFtorJxEL0IynfH/wEFtsmEukiJtp+cjasw=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "rr. 05 trader",
+        "plan": "pulse",
+        "plan_name": "pulse",
+        "is_unlimited": false,
+        "request_count": 12
+      },
+      {
+        "email_sha256": "cc6337727d181cb5aa1b12237e7e562d171cd3a525c9ff1e5ce9fa0179b40aa6",
+        "password_salt": "DAD3CtTmlVEMqQ+FyRU2Ug==",
+        "password_hash": "vxK9fGM9R6VHV9XyDycob5oG5jpdpLcIyiPh9hiEWFA=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "Rs Soyeb",
+        "plan": "pulse",
+        "plan_name": "pulse",
+        "is_unlimited": false,
+        "request_count": 12
+      },
+      {
+        "email_sha256": "3852990b56aa2bd58f9ffd2ea828692847dc68c6b00635961fafa1a7cc68cf4f",
+        "password_salt": "NUJm6CWNlRBMUxiLo1clRw==",
+        "password_hash": "a1B513LXy+AZVode8AVGEareIYdUEPvHbemf4Par33o=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "Sayhan",
+        "plan": "nexar",
+        "plan_name": "nexar",
+        "is_unlimited": false,
+        "request_count": 35
+      },
+      {
+        "email_sha256": "be16cc11d288ce6fd6844bcd22374dd7cfa0afa5fdb81e3272e8b283bbcd5752",
+        "password_salt": "Kt4t69DwQccqdnLsEdb+aQ==",
+        "password_hash": "vyuySFhBEJXC4WWsZz/N7nGY8Jj7GnMGH/g7YLUjQu0=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "Sweetex_vip",
+        "plan": "nexar",
+        "plan_name": "nexar",
+        "is_unlimited": false,
+        "request_count": 35
+      },
+      {
+        "email_sha256": "b98fffe0fbf415e7c66ddbbf7a344fe2f4c6e10a2f04d3a5e68d45313f4ff089",
+        "password_salt": "isQeK871L68tqp2M0FvTjg==",
+        "password_hash": "s1mlmkE+MrEDkkKlREz80my379WytsTXby2CduxgA0M=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "Tom",
+        "plan": "pulse",
+        "plan_name": "pulse",
+        "is_unlimited": false,
+        "request_count": 12
+      },
+      {
+        "email_sha256": "815217d1ae8a19317779d5d6c957aad2765e2bed5215c09b977b9179e6e53dcb",
+        "password_salt": "sv2aDCOuJKiED0/rryj8Cg==",
+        "password_hash": "iEzBmiRzGaT8/vwzeE2n/8cZm30aEXPyRGlbkgpP66Q=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "Trader BD",
+        "plan": "nexar",
+        "plan_name": "nexar",
+        "is_unlimited": false,
+        "request_count": 35
+      },
+      {
+        "email_sha256": "6b726cb9716a34708854ed4e96be2d33f11efd4993fc3cf00854490a3a46cb88",
+        "password_salt": "IN54gBkRqfV5Ee7PRXy38g==",
+        "password_hash": "Ber3KAcjoNTwVuPTYt+RkLuNxMkT1i9dFpE5cYD/nvE=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "Trader fahim",
+        "plan": "pulse",
+        "plan_name": "pulse",
+        "is_unlimited": false,
+        "request_count": 12
+      },
+      {
+        "email_sha256": "ab79d319fced89d497ad294af35a62602b17248b9e594e163eae402dcac51d5a",
+        "password_salt": "wqWhwYkkJTO9JVnkq55Cog==",
+        "password_hash": "VUSLqo0mk/mNR+49HyhNOP0E5Rxi9URyFpK5aoLGHcE=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "trader sadik",
+        "plan": "pulse",
+        "plan_name": "pulse",
+        "is_unlimited": false,
+        "request_count": 12
+      },
+      {
+        "email_sha256": "8a6020302a6e1a06167ee704ad49f86704c10fb326e96f8c006af5f12d5ee879",
+        "password_salt": "Zm1jjJ0KRT2SUQLUlge2JQ==",
+        "password_hash": "gf7oC/OBgCoXaXuZnKtZY9TcG1OXUMsMXifAtqhrzYE=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": null,
+        "label": "tt akash",
+        "plan": "pulse",
+        "plan_name": "pulse",
+        "is_unlimited": false,
+        "request_count": 12
+      }
+    ],
+    "legacy_licenses": [
       {
         "license_sha256": "7ef601c5a1e645f8ef8b76cd2aad2fbafa9c78ec5a303e8678a415578d846f72",
         "device_sha256": "3ef667c4b3304711bb0b78a1137611a9d7d97056070b1fd5ee011bdd233a022f",
@@ -16,9 +200,25 @@
         "expires_at": null,
         "label": "Owner PC",
         "plan_name": "VeloQ Owner"
+      },
+      {
+        "license_sha256": "3f14dd341fc453f6ca4dab8c79c2bb5ae5e215506cb3aafedebed668e7c0faaf",
+        "device_sha256": "3ef667c4b3304711bb0b78a1137611a9d7d97056070b1fd5ee011bdd233a022f",
+        "status": "active",
+        "expires_at": "2026-07-20T23:59:59Z",
+        "label": "me",
+        "plan_name": "VeloQ License"
+      },
+      {
+        "license_sha256": "7b13a0d8c14bf09b6cbe3cdf4e2b68a6d00a9fa487e5acdf8963896e02fa0dbd",
+        "device_sha256": "3ef667c4b3304711bb0b78a1137611a9d7d97056070b1fd5ee011bdd233a022f",
+        "status": "active",
+        "expires_at": "2026-07-20T23:59:59Z",
+        "label": "me 2",
+        "plan_name": "VeloQ License"
       }
     ]
   },
-  "payload_sha256": "1d8289f94352df8c891dbcca6fbe0911e588b350c53cb0af0b8bfc77d318c349",
-  "signature": "TNsjr5cnT7kGk6WHypAKxkwd+zTdYndSrUg8gddgaCJeehH19H+xscI15sqTZovOEapOtkyzR25tku/BKceWDg=="
+  "payload_sha256": "77ba1d4471a1ca068c018d08d02cf21f7bee64e384292947d82785d261de7b19",
+  "signature": "Cz6jxF7jj8ChoHQoj75JyZq3j9e0Vw89ME51S+FXu0aeqi5ax6sQggQ90YLVDMwrxTR5M76UCM6DZ36OSPX6BQ=="
 }

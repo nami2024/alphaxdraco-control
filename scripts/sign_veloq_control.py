@@ -17,7 +17,7 @@ from cryptography.hazmat.primitives import serialization
 ROOT = Path(__file__).resolve().parents[1]
 CONTROL_FILE = ROOT / "veloq" / "control.json"
 MANIFEST_FILE = ROOT / "veloq" / "manifest.json"
-KEY_ID = "veloq-ed25519-2026-01"
+KEY_ID = "veloq-ed25519-2026-02"
 HEX_64 = re.compile(r"^[0-9a-f]{64}$")
 MODEL_NAME = re.compile(r"^[A-Za-z0-9._:-]+/[A-Za-z0-9._:+-]+$")
 
@@ -41,8 +41,8 @@ def load_and_validate() -> dict:
     payload = json.loads(CONTROL_FILE.read_text(encoding="utf-8"))
     if not isinstance(payload, dict):
         raise ValueError("control payload must be an object")
-    if payload.get("schema_version") != 1:
-        raise ValueError("schema_version must be 1")
+    if payload.get("schema_version") != 2:
+        raise ValueError("schema_version must be 2")
     if not isinstance(payload.get("revision"), int) or payload["revision"] < 1:
         raise ValueError("revision must be a positive integer")
     if payload.get("enabled") not in (True, False):
@@ -55,39 +55,39 @@ def load_and_validate() -> dict:
         raise ValueError("offline_grace_hours must be between 0 and 72")
     validate_utc(str(payload.get("updated_at", "")))
 
-    licenses = payload.get("licenses")
-    if not isinstance(licenses, list):
-        raise ValueError("licenses must be an array")
+    users = payload.get("users")
+    if not isinstance(users, list):
+        raise ValueError("users must be an array")
 
     seen = set()
-    for item in licenses:
+    for item in users:
         if not isinstance(item, dict):
-            raise ValueError("each license must be an object")
-        license_hash = str(item.get("license_sha256", "")).lower()
-        if not HEX_64.fullmatch(license_hash):
-            raise ValueError("license_sha256 must be 64 lowercase hex characters")
-        if license_hash in seen:
-            raise ValueError("duplicate license hash")
-        seen.add(license_hash)
-
-        device_hash = str(item.get("device_sha256") or "").lower()
-        if device_hash and not HEX_64.fullmatch(device_hash):
-            raise ValueError("device_sha256 must be null or 64 lowercase hex characters")
+            raise ValueError("each user must be an object")
+        email_hash = str(item.get("email_sha256", "")).lower()
+        if not HEX_64.fullmatch(email_hash):
+            raise ValueError("email_sha256 must be 64 lowercase hex characters")
+        if email_hash in seen:
+            raise ValueError("duplicate email hash")
+        seen.add(email_hash)
         if item.get("status") not in ("active", "revoked"):
-            raise ValueError("license status must be active or revoked")
+            raise ValueError("user status must be active or revoked")
+        if not str(item.get("password_salt", "")) or not str(item.get("password_hash", "")):
+            raise ValueError("password hash data is required")
+        iterations = int(item.get("password_iterations", 0))
+        if not 100000 <= iterations <= 2000000:
+            raise ValueError("password_iterations is invalid")
         if item.get("expires_at"):
             validate_utc(str(item["expires_at"]))
 
-        item["license_sha256"] = license_hash
-        item["device_sha256"] = device_hash or None
+        item["email_sha256"] = email_hash
         item["label"] = str(item.get("label", "Customer")).strip()[:80] or "Customer"
         item["plan_name"] = (
             str(item.get("plan_name", "VeloQ License")).strip()[:80] or "VeloQ License"
         )
 
-    payload["licenses"] = sorted(
-        licenses,
-        key=lambda item: (item["label"].lower(), item["license_sha256"]),
+    payload["users"] = sorted(
+        users,
+        key=lambda item: (item["label"].lower(), item["email_sha256"]),
     )
     return payload
 
@@ -117,7 +117,7 @@ def main() -> None:
     )
     print(
         f"Signed VeloQ control revision {payload['revision']} "
-        f"with {len(payload['licenses'])} license(s)."
+        f"with {len(payload['users'])} user(s)."
     )
 
 
