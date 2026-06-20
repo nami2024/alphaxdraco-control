@@ -32,5 +32,6 @@ hashes; plaintext credentials are not committed.
 
 On the owner PC, run `VELOQ_GITHUB_ADMIN.cmd` from the VeloQ project. It can
 add/update Gmail and password accounts, revoke/reactivate users, and change the
-OpenRouter model. It signs both `control.json` and `manifest.json`, then pushes
-the update through the already authenticated GitHub CLI.
+OpenRouter model. Each account supports either Unlimited usage or a total
+request limit. The tool signs both `control.json` and `manifest.json`, then
+pushes the update through the already authenticated GitHub CLI.

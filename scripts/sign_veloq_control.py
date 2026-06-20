@@ -76,6 +76,14 @@ def load_and_validate() -> dict:
         iterations = int(item.get("password_iterations", 0))
         if not 100000 <= iterations <= 2000000:
             raise ValueError("password_iterations is invalid")
+        if item.get("is_unlimited") not in (True, False):
+            raise ValueError("is_unlimited must be true or false")
+        request_count = int(item.get("request_count", 0))
+        if request_count < 0 or request_count > 10000000:
+            raise ValueError("request_count is invalid")
+        if not item["is_unlimited"] and request_count < 1:
+            raise ValueError("limited users need at least 1 request")
+        item["request_count"] = request_count
         if item.get("expires_at"):
             validate_utc(str(item["expires_at"]))
 
