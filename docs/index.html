@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlphaXDraco License Tool</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0d1016; --panel:#171c24; --line:#303847; --orange:#ff9100; --text:#f1f5f9; --muted:#9aa7b5; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui,sans-serif; }
+    main { width:min(760px,calc(100% - 28px)); margin:32px auto; }
+    section { padding:24px; border:1px solid rgba(255,145,0,.35); border-radius:12px; background:var(--panel); }
+    h1 { margin:0 0 6px; } p { color:var(--muted); }
+    label { display:block; margin:18px 0 7px; font-weight:700; }
+    input,button { width:100%; min-height:44px; border-radius:8px; font:inherit; }
+    input { border:1px solid var(--line); background:#202634; color:var(--text); padding:10px 12px; }
+    button { border:0; margin-top:12px; background:var(--orange); color:#1a0f00; font-weight:850; cursor:pointer; }
+    code { display:block; overflow-wrap:anywhere; padding:12px; border-radius:8px; background:#202634; border:1px solid var(--line); }
+    .row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .small { font-size:13px; }
+    @media(max-width:620px){ .row{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<main>
+  <section>
+    <h1>AlphaXDraco License Tool</h1>
+    <p>Keys and hashes are generated inside your browser. Nothing is uploaded by this page.</p>
+
+    <button id="generate">Generate New License</button>
+
+    <label>License key — give this to the customer once</label>
+    <code id="license">Generate a key first</code>
+
+    <label>License SHA-256 — paste this into GitHub Actions</label>
+    <code id="hash">—</code>
+
+    <label for="device">Optional customer device code</label>
+    <input id="device" maxlength="64" placeholder="64-character device code shown by the bot">
+
+    <div class="row">
+      <button id="copyKey">Copy License Key</button>
+      <button id="copyHash">Copy License Hash</button>
+    </div>
+
+    <p class="small">In GitHub, open Actions → Manage license and model → Run workflow. Choose <b>add</b>, then paste the hash and optional device code.</p>
+  </section>
+</main>
+<script>
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+  let currentKey = "";
+  let currentHash = "";
+
+  function base32(bytes) {
+    let bits = 0, value = 0, output = "";
+    for (const byte of bytes) {
+      value = (value << 8) | byte;
+      bits += 8;
+      while (bits >= 5) {
+        output += alphabet[(value >>> (bits - 5)) & 31];
+        bits -= 5;
+      }
+    }
+    if (bits > 0) output += alphabet[(value << (5 - bits)) & 31];
+    return output;
+  }
+
+  async function sha256(text) {
+    const bytes = new TextEncoder().encode(text);
+    const digest = await crypto.subtle.digest("SHA-256", bytes);
+    return [...new Uint8Array(digest)].map(x => x.toString(16).padStart(2, "0")).join("");
+  }
+
+  document.querySelector("#generate").onclick = async () => {
+    const bytes = crypto.getRandomValues(new Uint8Array(20));
+    const raw = base32(bytes);
+    currentKey = "AXD3-" + raw.match(/.{1,4}/g).join("-");
+    currentHash = await sha256("AlphaXDraco-License-v1:" + currentKey.toUpperCase());
+    document.querySelector("#license").textContent = currentKey;
+    document.querySelector("#hash").textContent = currentHash;
+  };
+
+  document.querySelector("#copyKey").onclick = () => currentKey && navigator.clipboard.writeText(currentKey);
+  document.querySelector("#copyHash").onclick = () => currentHash && navigator.clipboard.writeText(currentHash);
+</script>
+</body>
+</html>

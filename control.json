@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "enabled": true,
+  "model": "z-ai/glm-5.2",
+  "offline_grace_hours": 24,
+  "updated_at": "2026-06-20T00:00:00Z",
+  "licenses": [
+    {
+      "license_sha256": "1bf737b835257ebfb3ff8e78cb8b64b55369cfb6d3baa7c4e2b6cf5ba4cb29e0",
+      "device_sha256": "3e33069896b6230591cfd033b5fcae1abcffe8b22c73175227b34f7de84fda0a",
+      "status": "active",
+      "expires_at": null,
+      "label": "Owner PC"
+    }
+  ]
+}
