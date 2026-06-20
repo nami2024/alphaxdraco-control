@@ -3,63 +3,232 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AlphaXDraco License Tool</title>
+  <title>AlphaXDraco License Admin</title>
   <style>
-    :root { color-scheme: dark; --bg:#0d1016; --panel:#171c24; --line:#303847; --orange:#ff9100; --text:#f1f5f9; --muted:#9aa7b5; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui,sans-serif; }
-    main { width:min(760px,calc(100% - 28px)); margin:32px auto; }
-    section { padding:24px; border:1px solid rgba(255,145,0,.35); border-radius:12px; background:var(--panel); }
-    h1 { margin:0 0 6px; } p { color:var(--muted); }
-    label { display:block; margin:18px 0 7px; font-weight:700; }
-    input,button { width:100%; min-height:44px; border-radius:8px; font:inherit; }
-    input { border:1px solid var(--line); background:#202634; color:var(--text); padding:10px 12px; }
-    button { border:0; margin-top:12px; background:var(--orange); color:#1a0f00; font-weight:850; cursor:pointer; }
-    code { display:block; overflow-wrap:anywhere; padding:12px; border-radius:8px; background:#202634; border:1px solid var(--line); }
-    .row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-    .small { font-size:13px; }
-    @media(max-width:620px){ .row{grid-template-columns:1fr;} }
+    :root {
+      color-scheme: dark;
+      --bg: #0b0f15;
+      --panel: #161c25;
+      --panel2: #202735;
+      --line: #303a4c;
+      --text: #f3f6fa;
+      --muted: #9da9b8;
+      --orange: #ff9100;
+      --green: #27c36a;
+      --red: #f06464;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--text); font: 15px/1.45 system-ui, sans-serif; }
+    main { width: min(1100px, calc(100% - 28px)); margin: 28px auto 48px; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 18px; }
+    h1, h2, p { margin: 0; }
+    h1 { font-size: 25px; }
+    h2 { font-size: 18px; margin-bottom: 15px; }
+    p, .muted { color: var(--muted); }
+    .panel { background: var(--panel); border: 1px solid rgba(255,145,0,.30); border-radius: 12px; padding: 21px; }
+    .login { width: min(460px, 100%); margin: 70px auto; }
+    .grid { display: grid; grid-template-columns: 380px 1fr; gap: 18px; }
+    label { display: block; margin: 14px 0 7px; color: var(--muted); font-size: 13px; font-weight: 750; }
+    input, select, button { width: 100%; min-height: 42px; border-radius: 8px; font: inherit; }
+    input, select { border: 1px solid var(--line); background: var(--panel2); color: var(--text); padding: 9px 11px; }
+    button { border: 0; margin-top: 14px; padding: 9px 12px; background: var(--orange); color: #1d1000; font-weight: 850; cursor: pointer; }
+    button:hover { filter: brightness(1.08); }
+    button.secondary { background: #354052; color: var(--text); }
+    button.good { background: var(--green); color: #021609; }
+    button.danger { background: var(--red); color: #210303; }
+    button.small { width: auto; min-height: 34px; margin: 0; font-size: 13px; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .toolbar button { width: auto; margin: 0; }
+    .notice { margin-bottom: 16px; padding: 11px 13px; border: 1px solid var(--line); border-radius: 8px; display: none; }
+    .notice.ok { display: block; background: rgba(39,195,106,.12); border-color: rgba(39,195,106,.5); }
+    .notice.bad { display: block; background: rgba(240,100,100,.12); border-color: rgba(240,100,100,.5); }
+    .keybox { display: none; margin-top: 16px; padding: 14px; border-radius: 9px; border: 1px solid rgba(39,195,106,.55); background: rgba(39,195,106,.09); }
+    .keybox code { display: block; margin: 8px 0; overflow-wrap: anywhere; color: #8ff0b6; font: 14px/1.5 ui-monospace, monospace; }
+    .cards { display: grid; gap: 11px; }
+    .card { padding: 14px; background: var(--panel2); border: 1px solid var(--line); border-radius: 9px; }
+    .cardhead { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+    .card strong { font-size: 16px; }
+    .meta { margin-top: 8px; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .badge { border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; }
+    .badge.active { background: rgba(39,195,106,.16); color: #79eba8; }
+    .badge.revoked { background: rgba(240,100,100,.16); color: #ff9a9a; }
+    #app { display: none; }
+    @media (max-width: 820px) {
+      .grid { grid-template-columns: 1fr; }
+      header { align-items: flex-start; }
+      .two { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 <main>
-  <section>
-    <h1>AlphaXDraco License Tool</h1>
-    <p>Keys and hashes are generated inside your browser. Nothing is uploaded by this page.</p>
+  <section id="login" class="panel login">
+    <h1>AlphaXDraco Admin</h1>
+    <p>Sign in with the repository owner's GitHub token.</p>
+    <label for="username">Admin ID</label>
+    <input id="username" value="nami2024" autocomplete="username">
+    <label for="token">Admin Password / GitHub Token</label>
+    <input id="token" type="password" autocomplete="current-password" placeholder="github_pat_... or ghp_...">
+    <button id="loginButton">Login</button>
+    <p style="margin-top:12px;font-size:13px">Token needs Contents: Read and write permission for <b>nami2024/alphaxdraco-control</b>.</p>
+  </section>
 
-    <button id="generate">Generate New License</button>
+  <section id="app">
+    <header>
+      <div>
+        <h1>AlphaXDraco License Admin</h1>
+        <p>GitHub-backed license control</p>
+      </div>
+      <button id="logout" class="secondary small">Logout</button>
+    </header>
 
-    <label>License key — give this to the customer once</label>
-    <code id="license">Generate a key first</code>
+    <div id="notice" class="notice"></div>
 
-    <label>License SHA-256 — stored in control.json</label>
-    <code id="hash">—</code>
+    <div class="grid">
+      <section class="panel">
+        <h2>Add License</h2>
+        <label for="label">Customer Name</label>
+        <input id="label" maxlength="80" placeholder="Customer name">
 
-    <label for="device">Optional customer device code</label>
-    <input id="device" maxlength="64" placeholder="64-character device code shown by the bot">
+        <label for="device">Device Code</label>
+        <input id="device" maxlength="64" placeholder="Paste code shown by the bot">
 
-    <label for="label">Customer label</label>
-    <input id="label" maxlength="80" placeholder="Customer name">
+        <div class="two">
+          <div>
+            <label for="expiry">Expiry Date</label>
+            <input id="expiry" type="date">
+          </div>
+          <div>
+            <label for="binding">Device Binding</label>
+            <select id="binding">
+              <option value="required">Required</option>
+              <option value="none">No binding</option>
+            </select>
+          </div>
+        </div>
 
-    <label for="expiry">Optional expiry</label>
-    <input id="expiry" type="date">
+        <button id="addLicense">Generate & Add License</button>
 
-    <label>JSON record — paste inside the licenses array</label>
-    <code id="record">—</code>
+        <div id="keybox" class="keybox">
+          <strong>New customer key — copy it now</strong>
+          <code id="newKey"></code>
+          <button id="copyKey" class="good">Copy License Key</button>
+        </div>
+      </section>
 
-    <div class="row">
-      <button id="copyKey">Copy License Key</button>
-      <button id="copyRecord">Copy JSON Record</button>
+      <section class="panel">
+        <div class="toolbar">
+          <div>
+            <h2 style="margin-bottom:2px">Licenses</h2>
+            <span id="count" class="muted">Loading…</span>
+          </div>
+          <button id="refresh" class="secondary small">Refresh</button>
+        </div>
+        <div id="licenses" class="cards"></div>
+      </section>
     </div>
-
-    <p class="small"><a href="https://github.com/nami2024/alphaxdraco-control/edit/main/control.json">Edit control.json on GitHub</a>, paste the record inside the <b>licenses</b> array, and commit.</p>
   </section>
 </main>
+
 <script>
+  const OWNER = "nami2024";
+  const REPO = "alphaxdraco-control";
+  const PATH = "control.json";
+  const API = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`;
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
-  let currentKey = "";
-  let currentHash = "";
-  let currentRecord = "";
+  let token = sessionStorage.getItem("axd_github_token") || "";
+  let fileSha = "";
+  let control = null;
+
+  const $ = (selector) => document.querySelector(selector);
+
+  function notice(message, bad = false) {
+    const box = $("#notice");
+    box.textContent = message;
+    box.className = `notice ${bad ? "bad" : "ok"}`;
+  }
+
+  function clearNotice() {
+    $("#notice").className = "notice";
+    $("#notice").textContent = "";
+  }
+
+  function headers() {
+    return {
+      "Accept": "application/vnd.github+json",
+      "Authorization": `Bearer ${token}`,
+      "X-GitHub-Api-Version": "2022-11-28"
+    };
+  }
+
+  function decodeBase64Utf8(value) {
+    const binary = atob(value.replace(/\n/g, ""));
+    const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
+    return new TextDecoder().decode(bytes);
+  }
+
+  function encodeBase64Utf8(value) {
+    const bytes = new TextEncoder().encode(value);
+    let binary = "";
+    bytes.forEach(byte => binary += String.fromCharCode(byte));
+    return btoa(binary);
+  }
+
+  async function githubRequest(url, options = {}) {
+    const response = await fetch(url, { ...options, headers: { ...headers(), ...(options.headers || {}) } });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.message || `GitHub error ${response.status}`);
+    return data;
+  }
+
+  async function login() {
+    clearNotice();
+    const username = $("#username").value.trim();
+    token = $("#token").value.trim();
+    if (username !== OWNER) {
+      alert("Wrong admin ID.");
+      return;
+    }
+    if (!token) {
+      alert("GitHub token is required.");
+      return;
+    }
+    try {
+      const user = await githubRequest("https://api.github.com/user");
+      if (user.login.toLowerCase() !== OWNER.toLowerCase()) throw new Error("Token does not belong to nami2024.");
+      sessionStorage.setItem("axd_github_token", token);
+      await showApp();
+    } catch (error) {
+      token = "";
+      sessionStorage.removeItem("axd_github_token");
+      alert(error.message);
+    }
+  }
+
+  async function loadControl() {
+    const data = await githubRequest(`${API}?ref=main&t=${Date.now()}`);
+    fileSha = data.sha;
+    control = JSON.parse(decodeBase64Utf8(data.content));
+    renderLicenses();
+  }
+
+  async function saveControl(message) {
+    control.updated_at = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
+    const data = await githubRequest(API, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message,
+        content: encodeBase64Utf8(JSON.stringify(control, null, 2) + "\n"),
+        sha: fileSha,
+        branch: "main"
+      })
+    });
+    fileSha = data.content.sha;
+    await loadControl();
+  }
 
   function base32(bytes) {
     let bits = 0, value = 0, output = "";
@@ -76,41 +245,132 @@
   }
 
   async function sha256(text) {
-    const bytes = new TextEncoder().encode(text);
-    const digest = await crypto.subtle.digest("SHA-256", bytes);
+    const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
     return [...new Uint8Array(digest)].map(x => x.toString(16).padStart(2, "0")).join("");
   }
 
-  document.querySelector("#generate").onclick = async () => {
-    const bytes = crypto.getRandomValues(new Uint8Array(20));
-    const raw = base32(bytes);
-    currentKey = "AXD3-" + raw.match(/.{1,4}/g).join("-");
-    currentHash = await sha256("AlphaXDraco-License-v1:" + currentKey.toUpperCase());
-    document.querySelector("#license").textContent = currentKey;
-    document.querySelector("#hash").textContent = currentHash;
-    updateRecord();
-  };
+  async function addLicense() {
+    clearNotice();
+    const label = $("#label").value.trim();
+    const binding = $("#binding").value;
+    const device = $("#device").value.trim().toLowerCase();
+    if (!label) return notice("Customer name is required.", true);
+    if (binding === "required" && !/^[0-9a-f]{64}$/.test(device)) {
+      return notice("A valid 64-character device code is required.", true);
+    }
 
-  function updateRecord() {
-    if (!currentHash) return;
-    const device = document.querySelector("#device").value.trim().toLowerCase();
-    const label = document.querySelector("#label").value.trim() || "Customer";
-    const date = document.querySelector("#expiry").value;
-    currentRecord = JSON.stringify({
-      license_sha256: currentHash,
-      device_sha256: device || null,
+    const raw = base32(crypto.getRandomValues(new Uint8Array(20)));
+    const key = "AXD3-" + raw.match(/.{1,4}/g).join("-");
+    const hash = await sha256("AlphaXDraco-License-v1:" + key.toUpperCase());
+    const expiry = $("#expiry").value;
+
+    control.licenses.push({
+      license_sha256: hash,
+      device_sha256: binding === "required" ? device : null,
       status: "active",
-      expires_at: date ? date + "T23:59:59Z" : null,
+      expires_at: expiry ? `${expiry}T23:59:59Z` : null,
       label
-    }, null, 2);
-    document.querySelector("#record").textContent = currentRecord;
+    });
+
+    try {
+      $("#addLicense").disabled = true;
+      await saveControl(`license: add ${label}`);
+      $("#newKey").textContent = key;
+      $("#keybox").style.display = "block";
+      notice(`License added for ${label}. Copy the key now.`);
+      $("#label").value = "";
+      $("#device").value = "";
+      $("#expiry").value = "";
+    } catch (error) {
+      control.licenses = control.licenses.filter(item => item.license_sha256 !== hash);
+      notice(error.message, true);
+    } finally {
+      $("#addLicense").disabled = false;
+    }
   }
 
-  document.querySelector("#device").oninput = updateRecord;
-  document.querySelector("#label").oninput = updateRecord;
-  document.querySelector("#expiry").oninput = updateRecord;
-  document.querySelector("#copyKey").onclick = () => currentKey && navigator.clipboard.writeText(currentKey);
-  document.querySelector("#copyRecord").onclick = () => currentRecord && navigator.clipboard.writeText(currentRecord);
+  async function setStatus(hash, status) {
+    const item = control.licenses.find(entry => entry.license_sha256 === hash);
+    if (!item) return;
+    item.status = status;
+    try {
+      await saveControl(`license: ${status} ${item.label || hash.slice(0, 8)}`);
+      notice(`License ${status}.`);
+    } catch (error) {
+      notice(error.message, true);
+      await loadControl();
+    }
+  }
+
+  async function deleteLicense(hash) {
+    const item = control.licenses.find(entry => entry.license_sha256 === hash);
+    if (!item || !confirm(`Delete license for ${item.label || "customer"}?`)) return;
+    control.licenses = control.licenses.filter(entry => entry.license_sha256 !== hash);
+    try {
+      await saveControl(`license: delete ${item.label || hash.slice(0, 8)}`);
+      notice("License deleted.");
+    } catch (error) {
+      notice(error.message, true);
+      await loadControl();
+    }
+  }
+
+  function renderLicenses() {
+    const list = [...(control.licenses || [])].reverse();
+    $("#count").textContent = `${list.length} total`;
+    $("#licenses").innerHTML = list.length ? list.map(item => {
+      const active = item.status === "active";
+      const expiry = item.expires_at ? item.expires_at.slice(0, 10) : "No expiry";
+      const device = item.device_sha256 || "Any device";
+      const hash = item.license_sha256;
+      return `
+        <article class="card">
+          <div class="cardhead">
+            <strong>${escapeHtml(item.label || "Customer")}</strong>
+            <span class="badge ${active ? "active" : "revoked"}">${active ? "ACTIVE" : "REVOKED"}</span>
+          </div>
+          <div class="meta">Expires: ${escapeHtml(expiry)}</div>
+          <div class="meta">Device: ${escapeHtml(device)}</div>
+          <div class="meta">Hash: ${escapeHtml(hash)}</div>
+          <div class="actions">
+            <button class="${active ? "danger" : "good"} small" onclick="setStatus('${hash}','${active ? "revoked" : "active"}')">
+              ${active ? "Revoke" : "Activate"}
+            </button>
+            <button class="danger small" onclick="deleteLicense('${hash}')">Delete</button>
+          </div>
+        </article>`;
+    }).join("") : `<p>No licenses found.</p>`;
+  }
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, char => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" })[char]);
+  }
+
+  async function showApp() {
+    $("#login").style.display = "none";
+    $("#app").style.display = "block";
+    try {
+      await loadControl();
+    } catch (error) {
+      sessionStorage.removeItem("axd_github_token");
+      token = "";
+      $("#app").style.display = "none";
+      $("#login").style.display = "block";
+      alert(error.message);
+    }
+  }
+
+  $("#loginButton").onclick = login;
+  $("#token").onkeydown = event => { if (event.key === "Enter") login(); };
+  $("#addLicense").onclick = addLicense;
+  $("#refresh").onclick = () => loadControl().then(() => notice("License list refreshed.")).catch(error => notice(error.message, true));
+  $("#copyKey").onclick = () => navigator.clipboard.writeText($("#newKey").textContent);
+  $("#logout").onclick = () => {
+    sessionStorage.removeItem("axd_github_token");
+    location.reload();
+  };
+
+  if (token) showApp();
 </script>
 </body>
 </html>
