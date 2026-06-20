@@ -3,11 +3,11 @@
   "key_id": "veloq-ed25519-2026-02",
   "payload": {
     "schema_version": 2,
-    "revision": 4,
+    "revision": 5,
     "enabled": true,
     "model": "openai/gpt-5.5",
     "offline_grace_hours": 24,
-    "updated_at": "2026-06-20T10:14:58Z",
+    "updated_at": "2026-06-20T10:18:34Z",
     "users": [
       {
         "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -49,19 +49,6 @@
         "request_count": 12
       },
       {
-        "email_sha256": "56c41806a60f324954351f2982e5127a4be65e46cca369141fecfc0881cdbbbb",
-        "password_salt": "8qxgIo8IHZX9F4mVXQFykg==",
-        "password_hash": "AcpQTzMVOZ89fIGk0Tm60LAmHE0Vz5RNI9NF3cTiS+U=",
-        "password_iterations": 350000,
-        "status": "active",
-        "expires_at": null,
-        "label": "GammaX Admin",
-        "plan": "nexar",
-        "plan_name": "nexar",
-        "is_unlimited": false,
-        "request_count": 10
-      },
-      {
         "email_sha256": "94f106ce4d34c2817de565236b5f8afd897310a98059b6e37d109fe742a213ec",
         "password_salt": "3wasuNMt98Wxa+OxhM93Ng==",
         "password_hash": "2LY4npBpUWg6qozcK3HchGjLQej/oaph0wSpemqmXt4=",
@@ -73,6 +60,19 @@
         "plan_name": "pulse",
         "is_unlimited": false,
         "request_count": 12
+      },
+      {
+        "email_sha256": "56c41806a60f324954351f2982e5127a4be65e46cca369141fecfc0881cdbbbb",
+        "password_salt": "8OmYYkRMayD6JfymSAXmBA==",
+        "password_hash": "OeEarxRCagKizAcbK0GNgAiWmCBFgzrXDYnuwAMiMcM=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": "2026-07-20T23:59:59Z",
+        "label": "Me",
+        "plan": "license",
+        "plan_name": "Pulse",
+        "is_unlimited": true,
+        "request_count": 0
       },
       {
         "email_sha256": "14e02f35a2a49b4776628f51cfe7ca2f6eeb96a0657a1c09729408eb9f3d64dd",
@@ -219,6 +219,6 @@
       }
     ]
   },
-  "payload_sha256": "77ba1d4471a1ca068c018d08d02cf21f7bee64e384292947d82785d261de7b19",
-  "signature": "Cz6jxF7jj8ChoHQoj75JyZq3j9e0Vw89ME51S+FXu0aeqi5ax6sQggQ90YLVDMwrxTR5M76UCM6DZ36OSPX6BQ=="
+  "payload_sha256": "34b46b6a0b0af0954972316ce07de78abec887563bd674b68142f7ada7a56215",
+  "signature": "uHhYBaWk2sIAnptIKDOKpq+kV9M/3zB1GoumNEjudoADkPGJXyqnzn9zuLXQISirAzNToKyH9GxBrmeinlD/Dg=="
 }
