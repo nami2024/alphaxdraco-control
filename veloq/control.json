@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 8,
+  "revision": 9,
   "enabled": true,
   "model": "google/gemini-3.5-flash",
   "offline_grace_hours": 24,
-  "updated_at": "2026-06-20T10:53:24Z",
+  "updated_at": "2026-06-20T12:14:19Z",
   "users": [
     {
       "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -18,6 +18,19 @@
       "plan_name": "pulse",
       "is_unlimited": false,
       "request_count": 12
+    },
+    {
+      "email_sha256": "22f943321f0d0a2c49fd405dae9a717676100e1d31ed157cfc5d2b52d50a322f",
+      "password_salt": "nkzyy4x/e3TfYUI6GnQZzw==",
+      "password_hash": "xALJTVuI4mVGyBuaDylPOxKx8sKme5xVu8occeiwNxg=",
+      "password_iterations": 350000,
+      "status": "active",
+      "expires_at": "2026-06-20T23:59:59Z",
+      "label": "Arshan Asif",
+      "plan": "license",
+      "plan_name": "Premium",
+      "is_unlimited": false,
+      "request_count": 10
     },
     {
       "email_sha256": "e23b69235ce9eec692be858284b0e7beaaa323547fa20d74df6a361c0b9fe286",

@@ -3,11 +3,11 @@
   "key_id": "veloq-ed25519-2026-02",
   "payload": {
     "schema_version": 2,
-    "revision": 8,
+    "revision": 9,
     "enabled": true,
     "model": "google/gemini-3.5-flash",
     "offline_grace_hours": 24,
-    "updated_at": "2026-06-20T10:53:24Z",
+    "updated_at": "2026-06-20T12:14:19Z",
     "users": [
       {
         "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -21,6 +21,19 @@
         "plan_name": "pulse",
         "is_unlimited": false,
         "request_count": 12
+      },
+      {
+        "email_sha256": "22f943321f0d0a2c49fd405dae9a717676100e1d31ed157cfc5d2b52d50a322f",
+        "password_salt": "nkzyy4x/e3TfYUI6GnQZzw==",
+        "password_hash": "xALJTVuI4mVGyBuaDylPOxKx8sKme5xVu8occeiwNxg=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": "2026-06-20T23:59:59Z",
+        "label": "Arshan Asif",
+        "plan": "license",
+        "plan_name": "Premium",
+        "is_unlimited": false,
+        "request_count": 10
       },
       {
         "email_sha256": "e23b69235ce9eec692be858284b0e7beaaa323547fa20d74df6a361c0b9fe286",
@@ -232,6 +245,6 @@
       }
     ]
   },
-  "payload_sha256": "420c2b2c7814fa66018be650573a8bad19952e68056453fa29640c707b3a4272",
-  "signature": "hLhFF3G17qocCOb18iOXt0Fla5atDi3Ty0q2lZn7R1suYy10+B7+qpvZjYteh2bJeJ9ttmgJGR+2BkJUc7sZDQ=="
+  "payload_sha256": "656836184020016aec20ae5239d536c0fcd03f17fea050f6d480d737165ad3d6",
+  "signature": "1pY3pBKuuLy7d2GmSMM4HLXo4ywJJut8otPgK4zuEzHQuyPo0LU6a/a1yyDSEWVSlc4tZI3euTKigxmWJJYwBg=="
 }
