@@ -1,0 +1,43 @@
+name: Sign VeloQ control
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "veloq/control.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sign-veloq-control
+  cancel-in-progress: false
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install signer dependency
+        run: python -m pip install --disable-pip-version-check cryptography
+
+      - name: Validate and sign control
+        env:
+          VELOQ_SIGNING_KEY_PEM: ${{ secrets.VELOQ_SIGNING_KEY_PEM }}
+        run: python scripts/sign_veloq_control.py
+
+      - name: Publish signed manifest
+        run: |
+          git config user.name "VeloQ Control Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add veloq/manifest.json
+          git diff --cached --quiet && exit 0
+          git commit -m "veloq: sign control revision"
+          git push

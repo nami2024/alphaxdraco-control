@@ -18,3 +18,14 @@ Open [AlphaXDraco License Admin](https://nami2024.github.io/alphaxdraco-control/
 The panel can generate/add, activate, revoke, and delete licenses. It does not expose model controls.
 
 The bot checks this fixed GitHub control URL before login and refreshes it between signal scans. If GitHub is temporarily unreachable, the last valid cached control file is accepted for the configured offline grace period.
+
+## VeloQ signed control
+
+VeloQ uses an independent Ed25519-signed control under `veloq/`.
+
+- Owner panel: https://nami2024.github.io/alphaxdraco-control/veloq.html
+- Editable source: `veloq/control.json`
+- Client-consumed signed file: `veloq/manifest.json`
+- Signer: `.github/workflows/sign-veloq-control.yml`
+
+The browser panel can add, revoke, activate, or delete VeloQ licenses and change the OpenRouter model. It only commits the unsigned control source. GitHub Actions signs each revision using the repository secret `VELOQ_SIGNING_KEY_PEM`; the private signing key is never exposed to the panel or desktop app.
