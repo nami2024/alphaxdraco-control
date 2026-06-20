@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "revision": 2,
+  "revision": 3,
   "enabled": true,
   "model": "openai/gpt-5.5",
   "offline_grace_hours": 24,
-  "updated_at": "2026-06-20T10:06:59Z",
+  "updated_at": "2026-06-20T10:09:14Z",
   "licenses": [
     {
       "license_sha256": "7ef601c5a1e645f8ef8b76cd2aad2fbafa9c78ec5a303e8678a415578d846f72",
@@ -20,6 +20,14 @@
       "status": "active",
       "expires_at": "2026-07-20T23:59:59Z",
       "label": "me",
+      "plan_name": "VeloQ License"
+    },
+    {
+      "license_sha256": "7b13a0d8c14bf09b6cbe3cdf4e2b68a6d00a9fa487e5acdf8963896e02fa0dbd",
+      "device_sha256": "3ef667c4b3304711bb0b78a1137611a9d7d97056070b1fd5ee011bdd233a022f",
+      "status": "active",
+      "expires_at": "2026-07-20T23:59:59Z",
+      "label": "me 2",
       "plan_name": "VeloQ License"
     }
   ]
