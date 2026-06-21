@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 11,
+  "revision": 12,
   "enabled": true,
   "model": "openai/gpt-5.5",
   "offline_grace_hours": 24,
-  "updated_at": "2026-06-21T13:35:54Z",
+  "updated_at": "2026-06-21T14:49:51Z",
   "users": [
     {
       "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -213,6 +213,19 @@
       "plan_name": "pulse",
       "is_unlimited": false,
       "request_count": 12
+    },
+    {
+      "email_sha256": "89e1b384f008d1db837efbfc5c23587cb7be0e46da14af9b11fa70d422667450",
+      "password_salt": "/5VO7xwUmVZTfhI+Kj8cAg==",
+      "password_hash": "slrSZ5tt99zEjf+9AdISIC+dJc0SdOrF808l7n1dpws=",
+      "password_iterations": 350000,
+      "status": "active",
+      "expires_at": "2026-06-22T23:59:59Z",
+      "label": "Trail1",
+      "plan": "license",
+      "plan_name": "Trail",
+      "is_unlimited": false,
+      "request_count": 1
     },
     {
       "email_sha256": "8a6020302a6e1a06167ee704ad49f86704c10fb326e96f8c006af5f12d5ee879",
