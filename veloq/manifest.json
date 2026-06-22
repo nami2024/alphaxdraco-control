@@ -3,11 +3,11 @@
   "key_id": "veloq-ed25519-2026-02",
   "payload": {
     "schema_version": 2,
-    "revision": 14,
+    "revision": 15,
     "enabled": true,
-    "model": "openai/gpt-5.5",
+    "model": "google/gemini-3.5-flash",
     "offline_grace_hours": 24,
-    "updated_at": "2026-06-22T14:48:09Z",
+    "updated_at": "2026-06-22T15:22:02Z",
     "users": [
       {
         "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -284,6 +284,6 @@
       }
     ]
   },
-  "payload_sha256": "1239f086031ad7ca84b2d25fec57fe55c7a333fa8009a574ba39e0aa03828508",
-  "signature": "29WEgt1C5vzqr4izTeZIdz8880JEVc8jGaqfKGLWMrgiUU7rN09x8WOHemu+5cDn+WV9EDvienkLnGWKKuraDA=="
+  "payload_sha256": "f6577e528ca8280fd52c3a231de3243ce229b33a3c211e13e7c9ae8a31c9286b",
+  "signature": "oqc4ZeYvgJ9feyeOAkmu5zuCZkAtSdw2mTXOrE6qt0F7F4PIGR0eOBokpb+uBDumI3rxcCY33ZyjRxNXCGPnBg=="
 }

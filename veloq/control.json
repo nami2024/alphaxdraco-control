@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 14,
+  "revision": 15,
   "enabled": true,
-  "model": "openai/gpt-5.5",
+  "model": "google/gemini-3.5-flash",
   "offline_grace_hours": 24,
-  "updated_at": "2026-06-22T14:48:09Z",
+  "updated_at": "2026-06-22T15:22:02Z",
   "users": [
     {
       "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
