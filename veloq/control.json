@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 15,
+  "revision": 16,
   "enabled": true,
-  "model": "google/gemini-3.5-flash",
+  "model": "openrouter/owl-alpha",
   "offline_grace_hours": 24,
-  "updated_at": "2026-06-22T15:22:02Z",
+  "updated_at": "2026-06-22T19:13:14Z",
   "users": [
     {
       "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
