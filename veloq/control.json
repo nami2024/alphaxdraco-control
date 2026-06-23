@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 17,
+  "revision": 18,
   "enabled": true,
   "model": "openrouter/owl-alpha",
   "offline_grace_hours": 24,
-  "updated_at": "2026-06-23T06:00:39Z",
+  "updated_at": "2026-06-23T06:19:40Z",
   "users": [
     {
       "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -78,6 +78,19 @@
       "password_iterations": 350000,
       "status": "active",
       "expires_at": "2026-24-06T23:59:59Z",
+      "label": "Mahim",
+      "plan": "license",
+      "plan_name": "Plus",
+      "is_unlimited": false,
+      "request_count": 10
+    },
+    {
+      "email_sha256": "b2084a2a2d10f10742032d58eefcfb7e5a293180737b2e594cf45c9c59c2a7a7",
+      "password_salt": "LiN1Kboo3VsuLakNd0I45A==",
+      "password_hash": "vD6pY0PAjbOp1OeNOe49NBlrU2U5Ok092zSGCeDkB+c=",
+      "password_iterations": 350000,
+      "status": "active",
+      "expires_at": "2026-06-25T23:59:59Z",
       "label": "Mahim",
       "plan": "license",
       "plan_name": "Plus",
