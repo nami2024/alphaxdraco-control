@@ -3,11 +3,11 @@
   "key_id": "veloq-ed25519-2026-02",
   "payload": {
     "schema_version": 2,
-    "revision": 18,
+    "revision": 19,
     "enabled": true,
-    "model": "openrouter/owl-alpha",
+    "model": "google/gemini-2.5-flash-lite",
     "offline_grace_hours": 24,
-    "updated_at": "2026-06-23T06:19:40Z",
+    "updated_at": "2026-06-24T16:04:53Z",
     "users": [
       {
         "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -310,6 +310,6 @@
       }
     ]
   },
-  "payload_sha256": "9d5c03c4ff256ea3fe1d58ec58cbcc60b8df2246490e5a4553e253708f1d223c",
-  "signature": "64G/ceNT0JMou4mj52prF2+EIXbth1Hm0cmxu42kkgrx5BvoLlYHp9AqJ5/sb0EygQ2bf4r3N5A7fw035Z2CDA=="
+  "payload_sha256": "ed04001e77d8e603cf999e29a247dc4fb1dd87f16594a6c00e3ac2bc53f3d1a1",
+  "signature": "+TuG3o7ofLa7dIRgFDI90rMeHa5OYZXoLgFO/4EGqXIlnUvssqcNOC9ALtgbYXtGwd8MM/pT7k1G0Uo5rrwICA=="
 }
