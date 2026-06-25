@@ -3,11 +3,11 @@
   "key_id": "veloq-ed25519-2026-02",
   "payload": {
     "schema_version": 2,
-    "revision": 19,
+    "revision": 20,
     "enabled": true,
     "model": "google/gemini-2.5-flash-lite",
     "offline_grace_hours": 24,
-    "updated_at": "2026-06-24T16:04:53Z",
+    "updated_at": "2026-06-25T15:14:33Z",
     "users": [
       {
         "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -179,6 +179,19 @@
         "request_count": 12
       },
       {
+        "email_sha256": "aec6f2a54b0001031054a5100c3793f2d0b529ab7df7eb86c66a2c9e4961c672",
+        "password_salt": "BBHtIvm1Ai8qALrXVgadQA==",
+        "password_hash": "gJXOrE9fLbMqfsbAWFkf66f0uT1FSOU1sHySswwgl6g=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": "2026-07-25T23:59:59Z",
+        "label": "Sadab'",
+        "plan": "license",
+        "plan_name": "plus",
+        "is_unlimited": false,
+        "request_count": 50
+      },
+      {
         "email_sha256": "3852990b56aa2bd58f9ffd2ea828692847dc68c6b00635961fafa1a7cc68cf4f",
         "password_salt": "NUJm6CWNlRBMUxiLo1clRw==",
         "password_hash": "a1B513LXy+AZVode8AVGEareIYdUEPvHbemf4Par33o=",
@@ -310,6 +323,6 @@
       }
     ]
   },
-  "payload_sha256": "ed04001e77d8e603cf999e29a247dc4fb1dd87f16594a6c00e3ac2bc53f3d1a1",
-  "signature": "+TuG3o7ofLa7dIRgFDI90rMeHa5OYZXoLgFO/4EGqXIlnUvssqcNOC9ALtgbYXtGwd8MM/pT7k1G0Uo5rrwICA=="
+  "payload_sha256": "0e51ee11057a5871df4966b999513e4090985b7b4c9485963af1b3519a771209",
+  "signature": "9osL6v9Zp2OH/mHJcn0GeJ3CKEcDXcGgWbPD1JubAwx67+OHqsjZbxK3G2j3ftSqdofh3e4tvdhuhKQzrv0RDw=="
 }
