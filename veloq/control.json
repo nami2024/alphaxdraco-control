@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 22,
+  "revision": 23,
   "enabled": true,
   "model": "anthropic/claude-sonnet-5",
   "offline_grace_hours": 24,
-  "updated_at": "2026-07-02T09:52:02Z",
+  "updated_at": "2026-07-13T16:41:37Z",
   "users": [
     {
       "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -59,6 +59,19 @@
       "request_count": 12
     },
     {
+      "email_sha256": "56c41806a60f324954351f2982e5127a4be65e46cca369141fecfc0881cdbbbb",
+      "password_salt": "w0vCHtUF8ZCx3VY35S7ZLg==",
+      "password_hash": "O79TaV0IzshBoMAj47nWY8kYtO0331GBvxTiMmGDYGA=",
+      "password_iterations": 350000,
+      "status": "active",
+      "expires_at": "2026-12-12T23:59:59Z",
+      "label": "GAMMAXADMIN",
+      "plan": "license",
+      "plan_name": "PLUS",
+      "is_unlimited": true,
+      "request_count": 0
+    },
+    {
       "email_sha256": "94f106ce4d34c2817de565236b5f8afd897310a98059b6e37d109fe742a213ec",
       "password_salt": "3wasuNMt98Wxa+OxhM93Ng==",
       "password_hash": "2LY4npBpUWg6qozcK3HchGjLQej/oaph0wSpemqmXt4=",
@@ -96,19 +109,6 @@
       "plan_name": "Plus",
       "is_unlimited": false,
       "request_count": 10
-    },
-    {
-      "email_sha256": "56c41806a60f324954351f2982e5127a4be65e46cca369141fecfc0881cdbbbb",
-      "password_salt": "nmvs4CaQVpubtKtKIOqQRg==",
-      "password_hash": "5xjBNznl+Pb4V2amkjqEA2yiyYPAG5CfzzkLlQn3+Gw=",
-      "password_iterations": 350000,
-      "status": "active",
-      "expires_at": "2026-07-20T23:59:59Z",
-      "label": "ME",
-      "plan": "license",
-      "plan_name": "Pulse",
-      "is_unlimited": false,
-      "request_count": 20
     },
     {
       "email_sha256": "1fe98e7ae37cca50bd7b59e193eaf1e1055194ee6c6a3f6281dc89e7f2c79c0f",
