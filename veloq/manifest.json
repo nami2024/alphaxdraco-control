@@ -3,11 +3,11 @@
   "key_id": "veloq-ed25519-2026-02",
   "payload": {
     "schema_version": 2,
-    "revision": 23,
+    "revision": 24,
     "enabled": true,
-    "model": "anthropic/claude-sonnet-5",
+    "model": "moonshotai/kimi-k3",
     "offline_grace_hours": 24,
-    "updated_at": "2026-07-13T16:41:37Z",
+    "updated_at": "2026-07-25T20:12:14Z",
     "users": [
       {
         "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -336,6 +336,6 @@
       }
     ]
   },
-  "payload_sha256": "c6080807b87d1b50b696de9a6e6f6d27e4aea95170e84c9b2337f21b2bea7375",
-  "signature": "TGSBZI4Wittno0g261g+KECSUCN1WtZCXQwdPHTgAiSyzt8BYm2+2+zJbYN/x/PIswj2lgTqgiPAI0ly6NN2Cg=="
+  "payload_sha256": "d663ee2b52b80c0e200b9ce6b00e46f1ecb9b2877653b9d9a94e25b94014c1cc",
+  "signature": "wqFAolo3FeJ+6HzoTFtx0mIq9DTJ0JPhK/3aGunYHmwmVCeWS+D4+2/Jd9Z1Gsc9/JaA2uGk4pCBu8YE7ohYAg=="
 }
