@@ -3,11 +3,11 @@
   "key_id": "veloq-ed25519-2026-02",
   "payload": {
     "schema_version": 2,
-    "revision": 24,
+    "revision": 25,
     "enabled": true,
     "model": "moonshotai/kimi-k3",
     "offline_grace_hours": 24,
-    "updated_at": "2026-07-25T20:12:14Z",
+    "updated_at": "2026-07-26T19:14:34Z",
     "users": [
       {
         "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -86,6 +86,19 @@
         "plan_name": "pulse",
         "is_unlimited": false,
         "request_count": 12
+      },
+      {
+        "email_sha256": "9f3084768a79ddb752d063b45ab1a4cc99ca7b72c335b2378432b692d95282dc",
+        "password_salt": "EtmSO9u4BB/bpLmrk3y6WQ==",
+        "password_hash": "oB9hQFtpvHpq+8F46KYQecJ7AiA8hIKSgNQXp7f+8d8=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": "2026-08-05T23:59:59Z",
+        "label": "Mahbub",
+        "plan": "license",
+        "plan_name": "Pro",
+        "is_unlimited": false,
+        "request_count": 30
       },
       {
         "email_sha256": "8694deb40bda71f300a4b0145c8d5a2c9280c2802caabd0d5a65499679f96890",
@@ -336,6 +349,6 @@
       }
     ]
   },
-  "payload_sha256": "d663ee2b52b80c0e200b9ce6b00e46f1ecb9b2877653b9d9a94e25b94014c1cc",
-  "signature": "wqFAolo3FeJ+6HzoTFtx0mIq9DTJ0JPhK/3aGunYHmwmVCeWS+D4+2/Jd9Z1Gsc9/JaA2uGk4pCBu8YE7ohYAg=="
+  "payload_sha256": "d9194a2b01f1274f01c93a27f3626c28d6a9ad572a188e34d7adb25771331724",
+  "signature": "we/DmhcAsxED/s//3rgi0HADIu6cx2Tqr7O+bPC3HUQ6A/n3YiZKHzCr5uQQEcLPK9cNm8ADvJIfRbb8XqI+AQ=="
 }
