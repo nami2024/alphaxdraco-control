@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 25,
+  "revision": 26,
   "enabled": true,
   "model": "moonshotai/kimi-k3",
   "offline_grace_hours": 24,
-  "updated_at": "2026-07-26T19:14:34Z",
+  "updated_at": "2026-08-04T18:12:09Z",
   "users": [
     {
       "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -135,6 +135,19 @@
       "plan_name": "Accuracy",
       "is_unlimited": false,
       "request_count": 10
+    },
+    {
+      "email_sha256": "253cca40fb3bb233b3c1d63764290494c71fd6cb230a6eac5c454360d0efa634",
+      "password_salt": "fUvhl72HNFv3BgW0khuhhQ==",
+      "password_hash": "h8ey9PcsK4iAzJg77gV9lNgawzP0ZXNorsNsshaeTc8=",
+      "password_iterations": 350000,
+      "status": "active",
+      "expires_at": "2026-08-30T23:59:59Z",
+      "label": "PZB_SUBPPORT",
+      "plan": "license",
+      "plan_name": "Plus",
+      "is_unlimited": true,
+      "request_count": 0
     },
     {
       "email_sha256": "2aa8a005a3bdc1836982ad498594e2101ad50369d24c1fd8bd05f1617bc75ef8",
