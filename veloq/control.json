@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 26,
+  "revision": 27,
   "enabled": true,
   "model": "moonshotai/kimi-k3",
   "offline_grace_hours": 24,
-  "updated_at": "2026-08-04T18:12:09Z",
+  "updated_at": "2026-09-06T19:18:01Z",
   "users": [
     {
       "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -239,6 +239,19 @@
       "plan_name": "nexar",
       "is_unlimited": false,
       "request_count": 35
+    },
+    {
+      "email_sha256": "634c38b3666d88da3eeab5c76f577f199ff09c7ce13d523a3d8c1068fbce4a44",
+      "password_salt": "TwS/e4m4R/D+g+7cflqtHA==",
+      "password_hash": "kSYIqtApg0gLHPeb76ovMS4ZiWpHtoJ6ziRYOw/zyyQ=",
+      "password_iterations": 350000,
+      "status": "active",
+      "expires_at": "2026-10-07T23:59:59Z",
+      "label": "SUNNY RAJPUT",
+      "plan": "license",
+      "plan_name": "PLUS",
+      "is_unlimited": false,
+      "request_count": 25
     },
     {
       "email_sha256": "be16cc11d288ce6fd6844bcd22374dd7cfa0afa5fdb81e3272e8b283bbcd5752",
