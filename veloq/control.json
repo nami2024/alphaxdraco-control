@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 30,
+  "revision": 31,
   "enabled": true,
   "model": "moonshotai/kimi-k3",
   "offline_grace_hours": 24,
-  "updated_at": "2026-09-08T17:53:46Z",
+  "updated_at": "2026-09-08T17:56:55Z",
   "users": [
     {
       "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -242,10 +242,10 @@
     },
     {
       "email_sha256": "634c38b3666d88da3eeab5c76f577f199ff09c7ce13d523a3d8c1068fbce4a44",
-      "password_salt": "ZVNISLRGH/+6XUba91ezHg==",
-      "password_hash": "F719xkLCBn6Rx88WJMZNrRmYzWx279Fro1Sq4Q4Q9iU=",
+      "password_salt": "laTSQjopY3ziaohRdINTIQ==",
+      "password_hash": "pDdcF8s5/C14DWIyDSdOnbBM/8bB5H++akeuj6rhI9M=",
       "password_iterations": 350000,
-      "status": "revoked",
+      "status": "active",
       "expires_at": "2026-10-07T23:59:59Z",
       "label": "SUNNY RAJPUT",
       "plan": "license",
