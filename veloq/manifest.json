@@ -3,11 +3,11 @@
   "key_id": "veloq-ed25519-2026-02",
   "payload": {
     "schema_version": 2,
-    "revision": 28,
+    "revision": 29,
     "enabled": true,
     "model": "moonshotai/kimi-k3",
     "offline_grace_hours": 24,
-    "updated_at": "2026-09-08T17:50:02Z",
+    "updated_at": "2026-09-08T17:52:35Z",
     "users": [
       {
         "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -257,6 +257,19 @@
         "request_count": 600
       },
       {
+        "email_sha256": "eedffc150d0e017a1660d84b9540d0992cda508ce5e55c445c3997802c15b8fc",
+        "password_salt": "OX+9T+ZEkV2ces19nKU2zQ==",
+        "password_hash": "wJYDYISKLkR0ShxFfOpCIIOhywTP6h+ZJ3n265padEE=",
+        "password_iterations": 350000,
+        "status": "active",
+        "expires_at": "2026-10-07T23:59:59Z",
+        "label": "SUNNY RAJPUT",
+        "plan": "license",
+        "plan_name": "PLUS",
+        "is_unlimited": false,
+        "request_count": 600
+      },
+      {
         "email_sha256": "be16cc11d288ce6fd6844bcd22374dd7cfa0afa5fdb81e3272e8b283bbcd5752",
         "password_salt": "Kt4t69DwQccqdnLsEdb+aQ==",
         "password_hash": "vyuySFhBEJXC4WWsZz/N7nGY8Jj7GnMGH/g7YLUjQu0=",
@@ -375,6 +388,6 @@
       }
     ]
   },
-  "payload_sha256": "475b40fa80e10f3e7ba69849b43ff9bb85db37350c7c9bb399060f1a64dea68f",
-  "signature": "IXaTU2jxE31j84krbxzBwXFD90IlUTaPfE9MH2DsmvYM3tWrTYccPgbo1FGAMn92lwUn/lpvNLZmmo/mi3loCg=="
+  "payload_sha256": "2503d02115fd218af56dec3cf586a6c605eddb9803e339244aeca19fd56d1543",
+  "signature": "8cyViCVJGj0nupoX4cicT+EdBrYMVZ0i1EjRvVbCpk+Z598+Otz1qlCkRNDQTMzpEhaBs7YemqCjkpLzhFeXCg=="
 }
