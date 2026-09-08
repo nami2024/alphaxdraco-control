@@ -3,11 +3,11 @@
   "key_id": "veloq-ed25519-2026-02",
   "payload": {
     "schema_version": 2,
-    "revision": 29,
+    "revision": 30,
     "enabled": true,
     "model": "moonshotai/kimi-k3",
     "offline_grace_hours": 24,
-    "updated_at": "2026-09-08T17:52:35Z",
+    "updated_at": "2026-09-08T17:53:46Z",
     "users": [
       {
         "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -248,7 +248,7 @@
         "password_salt": "ZVNISLRGH/+6XUba91ezHg==",
         "password_hash": "F719xkLCBn6Rx88WJMZNrRmYzWx279Fro1Sq4Q4Q9iU=",
         "password_iterations": 350000,
-        "status": "active",
+        "status": "revoked",
         "expires_at": "2026-10-07T23:59:59Z",
         "label": "SUNNY RAJPUT",
         "plan": "license",
@@ -388,6 +388,6 @@
       }
     ]
   },
-  "payload_sha256": "2503d02115fd218af56dec3cf586a6c605eddb9803e339244aeca19fd56d1543",
-  "signature": "8cyViCVJGj0nupoX4cicT+EdBrYMVZ0i1EjRvVbCpk+Z598+Otz1qlCkRNDQTMzpEhaBs7YemqCjkpLzhFeXCg=="
+  "payload_sha256": "e46f7b1a7870ac555a52b20178840f77aeb8d7a316cb4b70861d2424066cac93",
+  "signature": "l0qDIf4+lE+wtK4eWXpBUuwPk/QNipwJa2ZvxDzlnd/39DLT624VvnDWidpSSMneyu/ycb2bmpSX75nC+ggjAA=="
 }
