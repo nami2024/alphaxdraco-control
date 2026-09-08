@@ -3,11 +3,11 @@
   "key_id": "veloq-ed25519-2026-02",
   "payload": {
     "schema_version": 2,
-    "revision": 27,
+    "revision": 28,
     "enabled": true,
     "model": "moonshotai/kimi-k3",
     "offline_grace_hours": 24,
-    "updated_at": "2026-09-06T19:18:01Z",
+    "updated_at": "2026-09-08T17:50:02Z",
     "users": [
       {
         "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -245,8 +245,8 @@
       },
       {
         "email_sha256": "634c38b3666d88da3eeab5c76f577f199ff09c7ce13d523a3d8c1068fbce4a44",
-        "password_salt": "TwS/e4m4R/D+g+7cflqtHA==",
-        "password_hash": "kSYIqtApg0gLHPeb76ovMS4ZiWpHtoJ6ziRYOw/zyyQ=",
+        "password_salt": "ZVNISLRGH/+6XUba91ezHg==",
+        "password_hash": "F719xkLCBn6Rx88WJMZNrRmYzWx279Fro1Sq4Q4Q9iU=",
         "password_iterations": 350000,
         "status": "active",
         "expires_at": "2026-10-07T23:59:59Z",
@@ -254,7 +254,7 @@
         "plan": "license",
         "plan_name": "PLUS",
         "is_unlimited": false,
-        "request_count": 25
+        "request_count": 600
       },
       {
         "email_sha256": "be16cc11d288ce6fd6844bcd22374dd7cfa0afa5fdb81e3272e8b283bbcd5752",
@@ -375,6 +375,6 @@
       }
     ]
   },
-  "payload_sha256": "9e410c6f7a06f94265326bd884a6275366437a6f66587310399f90825119f92f",
-  "signature": "6ODchctakfl+I0l1DHr1/QmpG76Fc+stwcQortgm2mLszzX0e0H5/fhgNiF+gZWy7NloKwcfOAli9nwoCReQDA=="
+  "payload_sha256": "475b40fa80e10f3e7ba69849b43ff9bb85db37350c7c9bb399060f1a64dea68f",
+  "signature": "IXaTU2jxE31j84krbxzBwXFD90IlUTaPfE9MH2DsmvYM3tWrTYccPgbo1FGAMn92lwUn/lpvNLZmmo/mi3loCg=="
 }
