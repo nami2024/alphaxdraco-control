@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 31,
+  "revision": 32,
   "enabled": true,
   "model": "moonshotai/kimi-k3",
   "offline_grace_hours": 24,
-  "updated_at": "2026-09-08T17:56:55Z",
+  "updated_at": "2026-09-11T13:25:07Z",
   "users": [
     {
       "email_sha256": "3bc18fa01957199bf4cb499966a4594f70796b6bfeaecd3a9ade19cc0d77a34c",
@@ -239,6 +239,19 @@
       "plan_name": "nexar",
       "is_unlimited": false,
       "request_count": 35
+    },
+    {
+      "email_sha256": "4543973c2e7edc308bb83af6d3f682024d6b98a28864ccc1488f1239a7d7df0a",
+      "password_salt": "mY/IPk4pJPIRdlg08H5aGA==",
+      "password_hash": "W6hBx3W+uEfkNRqlR051Ec4px32SefBqQ0PwrcGReps=",
+      "password_iterations": 350000,
+      "status": "active",
+      "expires_at": null,
+      "label": "SMART LIFE",
+      "plan": "license",
+      "plan_name": "PULSE",
+      "is_unlimited": false,
+      "request_count": 600
     },
     {
       "email_sha256": "634c38b3666d88da3eeab5c76f577f199ff09c7ce13d523a3d8c1068fbce4a44",
